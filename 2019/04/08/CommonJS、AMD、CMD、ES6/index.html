@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+
+  
+  <meta name="keywords" content="付大强,付大強,baidu付大强,百度付大强,大強,大强,小強,小强,強,强,小强强,强强,小強強,強強,付大強い,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,小强精神,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,关于付大強,付大強个人简历,web付大強,前端付大強,小強精神,付大強的个人博客,前端小強,付大強的个人首页,付大強的个人中心,付大強的个人主页,打不死的小強,fudaqiang,FUDAQIANG,FDQ,小鬼,">
+  
+  
+    <meta name="description" content="付大强,付大強,baidu付大强,百度付大强,大強,大强,小強,小强,強,强,小强强,强强,小強強,強強,付大強い,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,小强精神,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,关于付大強,付大強个人简历,web付大強,前端付大強,小強精神,付大強的个人博客,前端小強,付大強的个人首页,付大強的个人中心,付大強的个人主页,打不死的小強,fudaqiang,FUDAQIANG,FDQ,小鬼,">
+    
+    
+
+  <title itemprop="name">CommonJS、AMD、CMD、ES6 | 強い</title>
+  
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+    /*Initial Variables*/
+    var mashiro_option = new Object();
+    var mashiro_global = new Object();
+    mashiro_option.NProgressON = true;
+    /* 
+     * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+     * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+     */
+    mashiro_option.email_domain = "";
+    mashiro_option.email_name = "";
+    mashiro_option.cookie_version_control = "";
+    mashiro_option.qzone_autocomplete = false;
+    mashiro_option.site_name = "さくら荘その強い";
+    mashiro_option.author_name = "強い";
+    mashiro_option.site_url = "http://fudaqiang.com";
+    mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+    mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+    mashiro_option.mathjax = "0";
+    mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/";
+    mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+    // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+    // mashiro_option.float_player_on = true;
+
+    /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+    var bg = "https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/cover/(8).jpg.webp".split(",");
+    var bgindex = Math.floor(Math.random() * bg.length);
+    if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+      alert('朋友，IE浏览器未适配哦~');
+    }
+  </script>
+  <style type="text/css">
+    .hljs-ln {
+      border-collapse: collapse
+    }
+
+    .hljs-ln td {
+      padding: 0
+    }
+
+    .hljs-ln-n:before {
+      content: attr(data-line-number)
+    }
+  </style>
+  <style type="text/css">
+    .site-top .lower nav {
+      display: block !important;
+    }
+
+    .author-profile i,
+    .post-like a,
+    .post-share .show-share,
+    .sub-text,
+    .we-info a,
+    span.sitename,
+    .post-more i:hover,
+    #pagination a:hover,
+    .post-content a:hover,
+    .float-content i:hover {
+      color: #FE9600
+    }
+
+    .feature i,
+    .download,
+    .navigator i:hover,
+    .links ul li:before,
+    .ar-time i,
+    span.ar-circle,
+    .object,
+    .comment .comment-reply-link,
+    .siren-checkbox-radio:checked+.siren-checkbox-radioInput:after {
+      background: #FE9600
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #FE9600
+    }
+
+    .download,
+    .navigator i:hover,
+    .link-title,
+    .links ul li:hover,
+    #pagination a:hover,
+    .comment-respond input[type='submit']:hover {
+      border-color: #FE9600
+    }
+
+    .entry-content a:hover,
+    .site-info a:hover,
+    .comment h4 a,
+    #comments-navi a.prev,
+    #comments-navi a.next,
+    .comment h4 a:hover,
+    .site-top ul li a:hover,
+    .entry-title a:hover,
+    #archives-temp h3,
+    span.page-numbers.current,
+    .sorry li a:hover,
+    .site-title a:hover,
+    i.iconfont.js-toggle-search.iconsearch:hover,
+    .comment-respond input[type='submit']:hover {
+      color: #FE9600
+    }
+
+    .comments .comments-main {
+      display: block !important;
+    }
+
+    .comments .comments-hidden {
+      display: none !important;
+    }
+
+    background-position:center center;
+    background-attachment:inherit;
+    }
+  </style>
+</head></html>
+
+<body
+  class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <!-- <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div> -->
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="http://fudaqiang.com">
+          <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/donate/rooon.gif">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/other/next-b.svg">
+          </li>
+          
+          
+          
+          <li>
+            <a href="http://github.com/qiang520184" target="_blank" class="social-github" title="github">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/social/github.png">
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="http://weibo.com/xq520184" target="_blank" class="social-github" title="sina">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/social/sina.png">
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://music.163.com/#/playlist?id=2523258784" target="_blank" class="social-github" title="wangyiyun">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/social/wangyiyun.png">
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="mailto:199513521@qq.com" target="_blank" class="social-github" title="email">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/social/email.svg">
+            </a>
+          </li>
+          
+          
+          
+          <li class="wechat">
+            <a href="/#">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/social/wechat.png">
+            </a>
+            <div class="wechatInner">
+              <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/donate/wxgzh.jpg">
+            </div>
+          </li>
+          
+          
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <!-- <div id="video-btn" class="loadvideo videolive">
+    </div> -->
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">強い</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://user-gold-cdn.xitu.io/2018/12/16/167b650e8d1fcc23?imageView2/0/w/1280/h/960/format/webp/ignore-error/1);" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://user-gold-cdn.xitu.io/2018/12/16/167b650e8d1fcc23?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">
+      CommonJS、AMD、CMD、ES6</h1>
+    <p class="entry-census">
+      <span>
+        <a href="fudaqiang.com">
+          <img src>
+        </a>
+      </span>
+      <span>
+        <a href="fudaqiang.com">強い</a>
+      </span>
+      <span class="bull">
+        ·</span>
+      2019-4-8<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+  </header>
+</div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+           <!--[TOC]-->
+<!-- ![](https://user-gold-cdn.xitu.io/2018/12/16/167b650e8d1fcc23?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)  -->
+<h2 id="前端模块化：CommonJs、AMD、CMD、ES6"><a href="#前端模块化：CommonJs、AMD、CMD、ES6" class="headerlink" title=" 前端模块化：CommonJs、AMD、CMD、ES6 "></a><font color="＃409EFF"> 前端模块化：CommonJs、AMD、CMD、ES6 </font></h2><h4 id="模块化的好处："><a href="#模块化的好处：" class="headerlink" title=" 模块化的好处： "></a><font color="#00ffff"> 模块化的好处： </font></h4><p>模块化的开发可以提升代码的可复用性，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。目前流行的js模块化规范有CommonJS、AMD、CMD、以及ES6的模块系统。</p>
+<h3 id="一、CommonJs"><a href="#一、CommonJs" class="headerlink" title="一、CommonJs"></a>一、CommonJs</h3><p>node.js是commonJS规范的主要实践者，它有四个重要的环境变量位为模块化的实现提供支持：         <font color="red">module、exports、require、global</font>。实际使用时，用module.exports定义当前模块对外输出的接口(不推荐直接用exports)，用require加载模块。</p>
+<pre><code class="js">//定义模块math.js
+var num = 0;
+function add(a, b){
+    return a + b;
+}
+module.exports = { //在这里写需要向外暴露的函数、变量
+    add:add,
+    num
+}
+//引用自定义的模块时，参数包含路径，可省略.js
+var math = require(&#39;./math&#39;)
+math.add(2,5) //7
+
+//引用node-module包时，不需要带路径
+var http = require(&#39;http&#39;)
+http.createService(()=&gt;{
+
+}).listen(3000)
+</code></pre>
+<p>CommonJS用同步的方法加载模块。在服务端，模块文化都存在本地磁盘，读取速度非常快，所以这样做不会有问题。但是在浏览器端，限于网络原因，更合理的方案是使用异步加载。</p>
+<h2 id="二、AMD和require-js"><a href="#二、AMD和require-js" class="headerlink" title="二、AMD和require.js"></a>二、AMD和require.js</h2><p>AMD规范采用异步方式加载模块，模块的加载不影响它后面的语句运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。这里介绍require.js实现AMD规范的模块化：用<font color="red">require.config()</font>指定引用路径等，用<font color="red">define()</font>定义模块，用<font color="red">require()</font>加载模块。<br>首先我们需要引入require.js文件和一个入口文件main.js中配置<font color="red">require.config()</font>并规定项目中用到等基础模块</p>
+<pre><code class="js">/*网页中引入ruire.js及main.js*/
+&lt;script src=&quot;require.js&quot; data-main=&quot;js/main&quot;&gt;&lt;/script&gt;
+/* main.js 入口文件/主模块*/
+require.config({
+    baseUrl: &quot;js/lib&quot;, //基路径
+    path:{
+        &quot;jquery&quot;:&quot;jquery.min&quot;, //实际路径js/lib/jquery.min.js
+        &quot;underscore&quot;:&quot;underscore.min&quot;
+    }
+});
+// 执行基本操作
+require([&quot;jquery&quot;,&quot;underscore&quot;],function($,un){
+    //some code here
+})
+</code></pre>
+<p>引用模块的时候，我们将模块名放在<font color="red">[]</font>中作为<font color="red">require()</font>的第一个参数；如果我们定义的模块本身也依赖其他模块，那就需要将他们放在<font color="red">[]</font>中作为<font color="red">define()</font>的第一个参数。</p>
+<pre><code class="js">    //定义math.js
+    define(function(){
+        var basicNum = 0;
+        var add = function(x, y){
+            return x + y;
+        };
+        return {
+            add: add,
+            basicNum: basicNum
+        };
+    });
+    //定义一个依赖underscore.js 模块
+    defind([&#39;underscore&#39;],function(nu){
+        var classify = function(list){
+            nu.conntBy(list,function(num){
+                return num &gt; 30 ? &#39;old&#39; : &#39;young&#39;;
+            })
+        };
+        return{
+            classify: classify
+        };
+    })
+    //引用模块，将模块放在[]内
+    require([&#39;jquery&#39;,&#39;math&#39;],function($,m){
+        var sum = math.add(1,2);
+        $(&quot;#box&quot;).html(sum)
+    });
+</code></pre>
+<h1 id="三、CMD和sea-js"><a href="#三、CMD和sea-js" class="headerlink" title="三、CMD和sea.js"></a>三、CMD和sea.js</h1><p>require.js在申明依赖的模块时会在第一之间加载并执行模块内的代码：</p>
+<pre><code class="js">    define([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],function(a,b,c){
+        //在最前面声明并初始化了要用到的所有模块
+        if(false){
+            //即便没用到某个模块，b 但在声明 b 时已经提前执行了
+            b.foo()
+        }
+    })
+</code></pre>
+<p>CMD是另一种js模块化方案，它于AMD很类似，不同点在于：AMD推崇依赖前置、提前执行，CMD推崇就近、延迟执行。此规范其实是在sea.js推广过程中产出的</p>
+<pre><code class="js">//AMD写法
+ define([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],function(a,b,c){
+        //在最前面声明并初始化了要用到的所有模块
+        if(false){
+            //即便没用到某个模块，b 但在声明 b 时已经提前执行了
+            b.foo()
+        }
+    })
+//CMD写法 
+// 定义模块 math.js
+define(function(require,export,module){
+    var $ = require(&#39;jquery&#39;);
+    var add = function(a,b){
+        return a + b;
+    }
+    exports.add = add;
+})
+//加载模块
+seajs.use([&#39;math.js&#39;],function(math){
+    var sum = math.add(1,2)
+})
+</code></pre>
+<h1 id="AMD与CMD-真正的不同-还是执行时间"><a href="#AMD与CMD-真正的不同-还是执行时间" class="headerlink" title="AMD与CMD - 真正的不同 还是执行时间"></a>AMD与CMD - 真正的不同 还是执行时间</h1><pre><code class="js">// AMD recommended
+define([&#39;a&#39;, &#39;b&#39;], function(a, b){
+    a.doSomething();    // 依赖前置，提前执行
+    b.doSomething();
+})
+
+// CMD recommanded
+define(function(require, exports, module){
+    var a = require(&quot;a&quot;);
+    a.doSomething();
+    var b = require(&quot;b&quot;);
+    b.doSomething();    // 依赖就近，延迟执行
+})
+</code></pre>
+<h1 id="四、ES6-Module"><a href="#四、ES6-Module" class="headerlink" title="四、ES6 Module"></a>四、ES6 Module</h1><p>ES6在语言标准的层面上，实现了模块功能，而且实现的相当简单，只为成为浏览器和服务器通用的模块定义方案。其模块功能主要由两个命令构成：<font color="red">export</font>和<font color="red">import</font>。<font color="red">export</font>命令用于规定模块的对外接口，<font color="red">import</font>命令用于输入其他模块提供的功能。</p>
+<pre><code class="js">    /** 定义模块 math.js **/
+    var basicNum = 0
+    var add = function(a,b){
+        return a + b; 
+    };
+    export {basicNum, add};
+
+    // 抛出变量
+    export var PI = 3.14;
+    export var bar = foo; 
+
+    //抛出 函数
+    export function foo(){
+        console.log(&#39;I am not bar.&#39;);
+    }
+
+    //默认抛出 一个js文件只能有一个默认抛出
+    export default (a, b)=&gt;{
+        return a + b
+    }
+
+    /** 引用模块 **/
+    import{basicNum, add } from &#39;./math&#39;;
+    function test(el){
+        el.innerHTML = add(1,basicNum);
+    }
+
+    import { foo as bar } from &quot;./math&quot;; //as 设置别名
+    bar(); 
+
+    import * as math from &quot;./math&quot;; //*所有抛出 都配置到 math身上
+    math.PI
+    math.foo()
+
+</code></pre>
+<p>如上例所示，使用<font color="red">import</font>命令的时候，用户需要知道所要加载的变量名或函数名。其实ES6还提供了<font color="red">export default</font> 命令，为模块指定默认输出，对应的import语句不需要使用大括号。这也更趋近于ADM的引用写法。</p>
+<h1 id="五、-ES6-模块与-CommonJS-模块的差异"><a href="#五、-ES6-模块与-CommonJS-模块的差异" class="headerlink" title="五、 ES6 模块与 CommonJS 模块的差异"></a>五、 ES6 模块与 CommonJS 模块的差异</h1><h4 id="1-CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用。"><a href="#1-CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用。" class="headerlink" title="1. CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用。"></a>1. CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用。</h4><ul>
+<li>CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。</li>
+<li>ES6 模块的运行机制与 CommonJS 不一样。JS 引擎对脚本静态分析的时候，遇到模块加载命令<font color="red">import</font>，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。换句话说，ES6 的<font color="red">import</font>有点像 Unix 系统的“符号连接”，原始值变了，<font color="red">import</font>加载的值也会跟着变。因此，ES6 模块是动态引用，并且不会缓存值，模块里面的变量绑定其所在的模块。</li>
+</ul>
+<h4 id="2-CommonJS模块是运行时加载，ES6模块是在编译时输出接口"><a href="#2-CommonJS模块是运行时加载，ES6模块是在编译时输出接口" class="headerlink" title="2. CommonJS模块是运行时加载，ES6模块是在编译时输出接口"></a>2. CommonJS模块是运行时加载，ES6模块是在编译时输出接口</h4><ul>
+<li>运行时加载: CommonJS 模块就是对象；即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载”。</li>
+<li>编译时加载: ES6 模块不是对象，而是通过  <font color="red">export</font> 命令显式指定输出的代码， <font color="red">import </font>时采用静态命令的形式。即在 <font color="red">import</font>时可以指定加载某个输出值，而不是加载整个模块，这种加载称为“编译时加载”。</li>
+</ul>
+<p>CommonJS 加载的是一个对象（即<font color="red">module.exports</font>属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</p>
+ <font color="red"></font>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/custom/donate/WeChatQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i>
+              知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/2019/04/08/Vue指令/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=772341069,4286210882&fm=26&gp=0.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+                Previous Post</span>
+              <div class="info">
+                <h3>
+                  Vue指令</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+          
+          
+          
+          <div class="post-nepre half next">
+            
+              <a href="/2018/10/08/javascript数组去重/" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                </div>
+                <span class="label">
+                  Next Post</span>
+                <div class="info">
+                  <h3>
+                    js数组去重</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="fudaqiang.com" class="profile gravatar"><img src itemprop="image" alt="強い" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+              <a href="fudaqiang.com" itemprop="url" rel="author">強い</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+    </div>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 付大强<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+      <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/qiang520184/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="http://www.fudaqiang.com/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">qiang</a>, Powered by Hexo,
+          Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    var Poi = {
+      "pjax": "1",
+      "movies": {
+        "url": "false",
+        "name": "Unbroken.mp4",
+        "live": "close"
+      },
+      "windowheight": "fixed",
+      "codelamp": "close",
+      "ajaxurl": "",
+      "order": "asc",
+      "formpostion": "bottom"
+    };
+  } else {
+    var Poi = {
+      "pjax": "1",
+      "movies": {
+        "url": "false",
+        "name": "Unbroken.mp4",
+        "live": "open"
+      },
+      "windowheight": "auto",
+      "codelamp": "close",
+      "ajaxurl": "",
+      "order": "asc",
+      "formpostion": "bottom"
+    };
+  }
+  /* ]]> */
+</script>
+<script>
+  $(document).ready(function () {
+    if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+      if ($(".pattern-center").length > 0) { //有图的情况
+        tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+        });
+      } else {
+        tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+        });
+      }
+      var offsetTop = $('.toc').offset().top - 95;
+      window.onscroll = function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= offsetTop) {
+          $('.toc').addClass('toc-fixed');
+        } else {
+          $('.toc').removeClass('toc-fixed');
+        }
+      }
+    }
+  });
+</script>
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/donate/rooon.gif">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘その強い</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/qiang520184" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/xq520184" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=199513521&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .lrc-show {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer" data-id="2523258784" data-server="netease" data-type="playlist" data-fixed="true" data-order="random">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+
+</html>
