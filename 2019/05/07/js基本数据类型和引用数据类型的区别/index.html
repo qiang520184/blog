@@ -467,7 +467,7 @@
 </li>
 <li>参数传递的不同（把实参复制给形参的过程）<ol>
 <li>基本类型： 只是把变量里的值传递给实参，之后参数和变量互不影响</li>
-<li>引用类型： 对象变量它里面的值是这个对象在堆内存中的内存地址，因此它传递的值也就是这个内存地址，这就是为什么函数内部修改了这个参数，函数外部这个对象也修改了，因为它们访问的是 同意一个内存地址</li>
+<li>引用类型： 对象变量它里面的值是这个对象在堆内存中的内存地址，因此它传递的值也就是这个内存地址，这就是为什么函数内部修改了这个参数，函数外部这个对象也修改了，因为它们访问的是 同一个内存地址</li>
 </ol>
 </li>
 </ol>
@@ -526,10 +526,27 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/2019/05/08/Vue组件的data为什么是函数而不是对象/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+                Previous Post</span>
+              <div class="info">
+                <h3>
+                  Vue组件的data为什么是函数而不是对象</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
           
           
-            <div class="post-nepre full next">
-              
+          
+          <div class="post-nepre half next">
+            
               <a href="/2019/04/20/防抖debounce/" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
@@ -631,6 +648,10 @@
 <script type="text/javascript" src="/js/sakura-app.js"></script>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+
+<!-- fundebug -->
+<script src="https://js.fundebug.cn/fundebug.1.7.3.min.js" apikey="e587f909cbc2717f80444949f920eeb42550bb2113ef91a56807b2d413415856"></script>
+
 <!-- 不蒜子 网页计数器 -->
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
@@ -706,6 +727,7 @@
       }
     }
   });
+  
 </script>
     <div class="openNav no-select" style="height: 50px;">
       <div class="iconflat no-select" style="width: 50px; height: 50px;">

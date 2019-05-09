@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fudaqiang.com/"/>
-  <updated>2019-05-07T02:57:29.465Z</updated>
+  <updated>2019-05-09T06:11:47.683Z</updated>
   <id>https://www.fudaqiang.com/</id>
   
   <author>
@@ -17,11 +17,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue组件开发props验证</title>
+    <link href="https://www.fudaqiang.com/2019/05/08/Vue%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91props%E9%AA%8C%E8%AF%81/"/>
+    <id>https://www.fudaqiang.com/2019/05/08/Vue组件开发props验证/</id>
+    <published>2019-05-08T06:51:53.000Z</published>
+    <updated>2019-05-09T06:11:47.683Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;props为啥要验证一下&quot;&gt;&lt;a href=&quot;#props为啥要验证一下&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.fudaqiang.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-修改文章链接的默认格式</title>
+    <link href="https://www.fudaqiang.com/2019/05/08/Hexo-%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5%E7%9A%84%E9%BB%98%E8%AE%A4%E6%A0%BC%E5%BC%8F/"/>
+    <id>https://www.fudaqiang.com/2019/05/08/Hexo-修改文章链接的默认格式/</id>
+    <published>2019-05-08T06:40:19.000Z</published>
+    <updated>2019-05-08T06:45:31.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hexo的永久链接的默认格式是 &lt;code&gt;:year/:month/:day/:title/&lt;/code&gt;，比如访问站点下某一篇文章时，其路径是
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.fudaqiang.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>程序员语录</title>
+    <link href="https://www.fudaqiang.com/2019/05/08/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%AD%E5%BD%95/"/>
+    <id>https://www.fudaqiang.com/2019/05/08/程序员语录/</id>
+    <published>2019-05-08T06:35:09.000Z</published>
+    <updated>2019-05-09T02:34:37.535Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;学习，是为了变成更好的自己，
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.fudaqiang.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue组件的data为什么是函数而不是对象</title>
+    <link href="https://www.fudaqiang.com/2019/05/08/Vue%E7%BB%84%E4%BB%B6%E7%9A%84data%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E8%80%8C%E4%B8%8D%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://www.fudaqiang.com/2019/05/08/Vue组件的data为什么是函数而不是对象/</id>
+    <published>2019-05-08T03:08:53.000Z</published>
+    <updated>2019-05-08T07:26:17.697Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Vue组件中为什么data是一个函数&quot;&gt;&lt;a href=&quot;#Vue组件中为什么data是一个函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.fudaqiang.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>js基本数据类型和引用数据类型的区别</title>
     <link href="https://www.fudaqiang.com/2019/05/07/js%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://www.fudaqiang.com/2019/05/07/js基本数据类型和引用数据类型的区别/</id>
     <published>2019-05-07T02:45:12.000Z</published>
-    <updated>2019-05-07T02:57:29.465Z</updated>
+    <updated>2019-05-07T11:56:38.851Z</updated>
     
     <summary type="html">
     
