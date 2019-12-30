@@ -7,14 +7,14 @@
   
 
   
-  <meta name="keywords" content="留言板,付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+  <meta name="keywords" content="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
   
   
     <meta name="description" content="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
     
     
 
-  <title itemprop="name">comment | 強い</title>
+  <title itemprop="name">Hexo-修改文章链接的默认格式 | 強い</title>
   
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/favicon.ico">
   
@@ -421,73 +421,140 @@
   </div>
 </header>
 
-      <div class="pattern-center-blank"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/javascript.png);" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/javascript.png">
   </div>
-  <header class="pattern-header ">
+  <header class="pattern-header single-header">
     <h1 class="entry-title">
-      留言板</h1>
+      Hexo-修改文章链接的默认格式</h1>
+    <p class="entry-census">
+      <span>
+        <a href="fudaqiang.com">
+          <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/images/donate/rooon.gif" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+        </a>
+      </span>
+      <span>
+        <a href="fudaqiang.com">強い</a>
+      </span>
+      <span class="bull">
+        ·</span>
+      2019-5-8<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
   </header>
 </div>
 
 <div id="content" class="site-content">
-  <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-    
-<div class="toc-container">
-  <div class="toc" style="background: none;">
-  </div>
-</div>
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    叙别梦、扬州一觉。</p>
-    <p id="info">
-    【宋代】吴文英《夜游宫·人去西楼雁杳》</p>
-  </div>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>Hexo的永久链接的默认格式是 <code>:year/:month/:day/:title/</code>，比如访问站点下某一篇文章时，其路径是 <code>2018/04/12/xxxx/</code>，如果我们的文章标题是中文的，那么该路径就会出现中文字符。在路径中出现了中文字符很容易引发各种问题，而且也不利于seo，因为路径包含了年月日三个层级，层级太深不利于百度蜘蛛抓取。</p>
+<p>解决办法就是利用其它的插件来生成唯一的路径，这样就算我们的文件标题随意修改，而不会导致原本的链接失效而造成站点下存在大量的死链。</p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>在站点根目录使用 git bash 执行命令：</p>
+<p>npm install hexo-abbrlink –save</p>
+<h3 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h3><p>打开根目录下的 _config.yml 文件，修改如下配置：</p>
+<pre><code class="json"># permalink: :year/:month/:day/:title/
+# permalink_defaults:
+permalink: :year/:abbrlink.html
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex123456
+
+</code></pre>
+<p>这里将页面都添加了 .html 的后缀，用来伪装成静态页面(虽说Hexo的页面本身就是静态页面)，这样可以直接从路径就知道这是个静态页面，方便seo。</p>
+<p>接下来重新部署三连，可以看到我们的文章路径变成了 /2018/xxxxx.html，接下来就算我们将文字标题命名为中文也没问题了。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/img/custom/donate/AliPayQR.jpg" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/img/custom/donate/WeChatQR.jpg" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i>
+              知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/Vue组件开发props验证.html" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/vue.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+              </div>
+              <span class="label">
+                Previous Post</span>
+              <div class="info">
+                <h3>
+                  Vue组件开发props验证</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+          
+          
+          
+          <div class="post-nepre half next">
+            
+              <a href="/程序员语录.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/apple.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+                </div>
+                <span class="label">
+                  Next Post</span>
+                <div class="info">
+                  <h3>
+                    程序员语录</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/images/donate/rooon.gif" itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+              <a href itemprop="url" rel="author">強い</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-    <!-- .entry-content -->
-    
-    <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-    </div>
-    <footer class="post-footer">
-      <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-      </div>
-      <div class="post-tags">
-      </div>
-      <div class="post-share">
-        <div class="social-share sharehidden share-component"></div>
-        <i class="iconfont show-share icon-forward"></i>
-      </div>
-    </footer><!-- .entry-footer -->
-  </article>
-  <!-- #post-## -->
-  <div class="toc-container" style="height: 1053px;">
-    <div class="toc" style="background: none;"></div>
-  </div>
-  <section class="author-profile">
-    <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/images/donate/rooon.gif" itemprop="image" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ," height="70" width="70"></a>
-      <div class="meta">
-        <span class="title">Author</span>
-        <h3 itemprop="name">
-          <a href="https://www.fudaqiang.com" itemprop="url" rel="author">強い</a>
-        </h3>
-      </div>
-    </div>
-    <hr>
-    <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
-  </section>
-</div><!-- #primary -->
 
     </div>
     <div class="ins-search">

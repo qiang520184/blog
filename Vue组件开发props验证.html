@@ -7,14 +7,14 @@
   
 
   
-  <meta name="keywords" content="留言板,付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+  <meta name="keywords" content="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
   
   
     <meta name="description" content="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
     
     
 
-  <title itemprop="name">comment | 強い</title>
+  <title itemprop="name">Vue组件开发props验证 | 強い</title>
   
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.2/images/favicon.ico">
   
@@ -421,73 +421,188 @@
   </div>
 </header>
 
-      <div class="pattern-center-blank"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/vue.png);" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/vue.png">
   </div>
-  <header class="pattern-header ">
+  <header class="pattern-header single-header">
     <h1 class="entry-title">
-      留言板</h1>
+      Vue组件开发props验证</h1>
+    <p class="entry-census">
+      <span>
+        <a href="fudaqiang.com">
+          <img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/images/donate/rooon.gif" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+        </a>
+      </span>
+      <span>
+        <a href="fudaqiang.com">強い</a>
+      </span>
+      <span class="bull">
+        ·</span>
+      2019-5-8<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
   </header>
 </div>
 
 <div id="content" class="site-content">
-  <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-    
-<div class="toc-container">
-  <div class="toc" style="background: none;">
-  </div>
-</div>
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    叙别梦、扬州一觉。</p>
-    <p id="info">
-    【宋代】吴文英《夜游宫·人去西楼雁杳》</p>
-  </div>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h4 id="props为啥要验证一下"><a href="#props为啥要验证一下" class="headerlink" title="props为啥要验证一下"></a>props为啥要验证一下</h4><ol>
+<li>它们写明了组件的API,所以很容易看懂组件的用法</li>
+<li>在开发环境中，如果向一个组件提供格式不正确的prop，Vue将会警告，可以帮助我们捕获潜在的错误来源。</li>
+</ol>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>可以使用type来声明这个参数可以接受的数据的类型，当检查规则只有一个的时候type可以略写<br>type能够指定的类型<br>String、Number、Boolean、Functio、Object、Array、Symbol</p>
+<pre><code class="js">    props: {
+        fooMessage: {
+            type: Number,
+        }
+    }
+</code></pre>
+<h3 id="required"><a href="#required" class="headerlink" title="required"></a>required</h3><p>可以使用required选项来声明这个参数是否必须传入</p>
+<pre><code class="js">    props: {
+        fooMessage: {
+            type: Number,
+            required: true
+        }
+    }
+</code></pre>
+<h3 id="default"><a href="#default" class="headerlink" title="default"></a>default</h3><p>使用default选项来指定当前父组件未传入参数时props变量的默认值</p>
+<pre><code class="js">    props: {
+        fooMessage: {
+            type: String,
+            default: &quot;我是默认信息&quot;
+        }
+    }
+</code></pre>
+<blockquote>
+<p>当type的类型为Array或者Object的时候default必须是一个函数：</p>
+</blockquote>
+<pre><code class="js">    props: {
+        fooMessage: {
+            type: Array,
+            default: function(){
+                return [&quot;yes&quot;, &quot;no&quot;];
+            }
+        }
+    }
+</code></pre>
+<h4 id="JS中对象和数组是引用类型，指向同一个内存空间，如果-props-是一个对象或数组，在子组件内部改变它会影响父组件的状态-不懂就点我吧"><a href="#JS中对象和数组是引用类型，指向同一个内存空间，如果-props-是一个对象或数组，在子组件内部改变它会影响父组件的状态-不懂就点我吧" class="headerlink" title="JS中对象和数组是引用类型，指向同一个内存空间，如果 props 是一个对象或数组，在子组件内部改变它会影响父组件的状态 不懂就点我吧"></a><font color="red">JS中对象和数组是引用类型，指向同一个内存空间，如果 props 是一个对象或数组，在子组件内部改变它会影响父组件的状态</font> <a href="https://www.fudaqiang.com/2019/05/07/js基本数据类型和引用数据类型的区别/" target="_blank">不懂就点我吧</a></h4><h3 id="validator"><a href="#validator" class="headerlink" title="validator"></a>validator</h3><p>当效验规则很复杂，默认提供的效验规则无法满足的时候可以使用自定义函数来效验。</p>
+<pre><code class="js">props: {
+    fooMessage: {
+        validator: function(value){
+            return value&gt;=0 &amp;&amp; value&lt;=128;
+        }
+    }
+}
+</code></pre>
+<h3 id="一个综合的例子"><a href="#一个综合的例子" class="headerlink" title="一个综合的例子"></a>一个综合的例子</h3><pre><code class="js">props: {
+    // fooA只接受数值类型的参数
+    fooA: Number,
+    // fooB可以接受字符串和数值类型的参数
+    fooB: [String, Number],
+    // fooC可以接受字符串类型的参数，并且这个参数必须传入
+    fooC: {
+        type: String,
+        required: true
+    },
+    // fooD接受数值类型的参数，如果不传入的话默认就是100
+    fooD: {
+        type: Number,
+        default: 100
+    },
+    // fooE接受对象类型的参数
+    fooE: {
+        type: Object,
+        // 当为对象类型设置默认值时必须使用函数返回
+        default: function(){
+            return { message: &#39;Hello, world&#39; }
+        }
+    },
+    // fooF使用一个自定义的验证器
+    fooF: {
+        validator: function(value){
+            return value&gt;=0 &amp;&amp; value&lt;=100;
+        }
+    }
+}
+
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/img/custom/donate/AliPayQR.jpg" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/img/custom/donate/WeChatQR.jpg" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i>
+              知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+          
+            <div class="post-nepre full next">
+              
+              <a href="/Hexo-修改文章链接的默认格式.html" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/md-img/javascript.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ,">
+                </div>
+                <span class="label">
+                  Next Post</span>
+                <div class="info">
+                  <h3>
+                    Hexo-修改文章链接的默认格式</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3/images/donate/rooon.gif" itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+              <a href itemprop="url" rel="author">強い</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-    <!-- .entry-content -->
-    
-    <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-    </div>
-    <footer class="post-footer">
-      <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-      </div>
-      <div class="post-tags">
-      </div>
-      <div class="post-share">
-        <div class="social-share sharehidden share-component"></div>
-        <i class="iconfont show-share icon-forward"></i>
-      </div>
-    </footer><!-- .entry-footer -->
-  </article>
-  <!-- #post-## -->
-  <div class="toc-container" style="height: 1053px;">
-    <div class="toc" style="background: none;"></div>
-  </div>
-  <section class="author-profile">
-    <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/qiang520184/cdn@1.3.6/images/donate/rooon.gif" itemprop="image" alt="付大强,付大強,baidu付大强,百度付大强,我不是苏大强,苏大强不是我,我是付大强，不是苏大强,关于付大强,付大强个人简历,web付大强,前端付大强,付大强的个人博客,前端小强,付大强的个人首页,付大强的个人中心,付大强的个人主页,打不死的小强,fudaqiang,FUDAQIANG,FDQ," height="70" width="70"></a>
-      <div class="meta">
-        <span class="title">Author</span>
-        <h3 itemprop="name">
-          <a href="https://www.fudaqiang.com" itemprop="url" rel="author">強い</a>
-        </h3>
-      </div>
-    </div>
-    <hr>
-    <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
-  </section>
-</div><!-- #primary -->
 
     </div>
     <div class="ins-search">
